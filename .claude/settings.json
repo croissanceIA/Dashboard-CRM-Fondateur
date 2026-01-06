@@ -29,6 +29,7 @@
       "Bash(git diff:*)",
       "Bash(git log:*)",
       "Bash(gh issue view:*)",
+      "Bash(gh:*)",
       "WebFetch(domain:*)",
       "Skill(*)"
     ],

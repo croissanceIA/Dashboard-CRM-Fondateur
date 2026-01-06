@@ -41,3 +41,5 @@ build/
 # Le dossier .claude/ contient la configuration de Claude Code
 # et doit être versionnée pour partager la configuration
 # .claude/ est donc INCLUS par défaut (pas d'exclusion ici)
+# MAIS on exclut settings.local.json qui contient des paramètres locaux
+.claude/settings.local.json
