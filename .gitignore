@@ -1,0 +1,43 @@
+# Fichiers d'environnement (contiennent des secrets)
+.env
+.env.local
+.env.*.local
+*.env
+
+# Dépendances
+node_modules/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Système
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Cache
+.cache/
+*.cache
+
+# Build
+dist/
+build/
+*.egg-info/
+
+# Configuration Claude Code - À INCLURE dans Git
+# Le dossier .claude/ contient la configuration de Claude Code
+# et doit être versionnée pour partager la configuration
+# .claude/ est donc INCLUS par défaut (pas d'exclusion ici)
