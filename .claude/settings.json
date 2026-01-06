@@ -33,7 +33,11 @@
       "WebFetch(domain:*)",
       "Skill(*)"
     ],
-    "deny": [
-    ]
+    "deny": []
+  },
+  "enabledPlugins": {
+    "context7@claude-plugins-official": true,
+    "playwright@claude-plugins-official": true,
+    "example-skills@anthropic-agent-skills": true
   }
 }
