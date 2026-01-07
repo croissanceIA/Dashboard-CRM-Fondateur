@@ -1,16 +1,18 @@
 'use client'
 
-import { Space, Typography, Card } from 'antd'
+import { Space, Typography, Card, Divider } from 'antd'
 import { CSVUploader } from '@/components/shared/CSVUploader'
 import { KPICards } from '@/components/dashboard/KPICards'
 import { PipelineChart } from '@/components/dashboard/PipelineChart'
+import { SearchBar } from '@/components/shared/SearchBar'
+import { DealsTable } from '@/components/deals/DealsTable'
 import { useDealsStore } from '@/store/dealsStore'
 import { Deal } from '@/lib/types'
 
 const { Title, Paragraph } = Typography
 
 export default function DashboardPage() {
-  const { deals, kpis, setDeals } = useDealsStore()
+  const { deals, kpis, searchQuery, filteredDeals, setDeals, setSearchQuery } = useDealsStore()
 
   const handleDataLoaded = (loadedDeals: Deal[]) => {
     setDeals(loadedDeals)
@@ -40,6 +42,20 @@ export default function DashboardPage() {
           <>
             <KPICards kpis={kpis} />
             <PipelineChart deals={deals} />
+
+            <Divider />
+
+            <div>
+              <Title level={3}>Liste des Deals</Title>
+              <Space direction="vertical" size="middle" style={{ width: '100%' }}>
+                <SearchBar
+                  value={searchQuery}
+                  onChange={setSearchQuery}
+                  placeholder="Rechercher par contact, entreprise ou notes..."
+                />
+                <DealsTable deals={filteredDeals} />
+              </Space>
+            </div>
           </>
         )}
       </Space>
